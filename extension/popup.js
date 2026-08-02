@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   let cfg = {
     lang: 'Swahili', readingLevel: 1, fontSize: 2,
-    backendUrl: 'http://127.0.0.1:5001',
+    backendUrl: 'https://software-engineering-project-1-kiongozi.onrender.com',
     highContrast: true, largeFont: false, dyslexia: false,
     simplifyUI: true, onboardingDone: false,
   };
