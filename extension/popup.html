@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <!-- ══ ONBOARDING 1: Welcome ══ -->
+  <div id="screen-ob1" class="screen ob-screen active">
+    <div class="step-dots">
+      <div class="dot active"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <div class="ob-icon">♿</div>
+    <div class="ob-text">
+      <h2>Welcome to Kiongozi AI</h2>
+      <p>Making the web easier to read for everyone. Let us show you how it works in just a few steps.</p>
+    </div>
+    <div class="ob-actions">
+      <button id="ob1-next" class="next-btn">Next →</button>
+      <span id="ob1-skip" class="skip-link">Skip for now</span>
+    </div>
+  </div>
+
+  <!-- ══ ONBOARDING 2: Text Size ══ -->
+  <div id="screen-ob2" class="screen ob-screen">
+    <div class="step-dots">
+      <div class="dot done"></div><div class="dot active"></div><div class="dot"></div>
+    </div>
+    <div class="ob-icon" style="font-size:40px;">🔤</div>
+    <div class="ob-text" style="margin-bottom:14px;">
+      <h2>Choose Your Text Size</h2>
+      <p>Pick a size that is comfortable for your eyes.</p>
+    </div>
+    <div class="font-options">
+      <div class="font-option" data-size="normal">
+        <span class="font-option-label">Normal</span>
+        <span class="font-option-preview" style="font-size:16px;">Aa</span>
+      </div>
+      <div class="font-option selected" data-size="large">
+        <span class="font-option-label">Large</span>
+        <span class="font-option-preview" style="font-size:21px;">Aa</span>
+      </div>
+      <div class="font-option" data-size="xlarge">
+        <span class="font-option-label">Extra Large</span>
+        <span class="font-option-preview" style="font-size:26px;">Aa</span>
+      </div>
+    </div>
+    <div class="ob-actions">
+      <button id="ob2-next" class="next-btn">Next →</button>
+      <span id="ob2-skip" class="skip-link">Skip for now</span>
+    </div>
+  </div>
+
+  <!-- ══ ONBOARDING 3: All Set ══ -->
+  <div id="screen-ob3" class="screen ob-screen">
+    <div class="step-dots">
+      <div class="dot done"></div><div class="dot done"></div><div class="dot active"></div>
+    </div>
+    <div class="ob-icon" style="background:#E8F8EE; font-size:42px;">✅</div>
+    <div class="ob-text">
+      <h2>You're All Set!</h2>
+      <p>Kiongozi AI is ready to help you read the web more comfortably. You can always adjust settings later.</p>
+      <p class="ob-tip">💡 <strong>Tip:</strong> Kiongozi AI automatically simplifies pages for you. Click the extension icon any time to change preferences.</p>
+    </div>
+    <div class="ob-actions">
+      <button id="ob3-start" class="next-btn">Get Started →</button>
+    </div>
+  </div>
+
+  <!-- ══ MAIN SCREEN ══ -->
+  <div id="screen-main" class="screen">
+    <div class="popup-header">
+      <div class="header-top">
+        <div>
+          <h1>KIONGOZI AI</h1>
+          <p id="header-status">Web accessibility for everyone</p>
+        </div>
+        <svg id="btn-open-settings" class="gear-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="popup-body">
+      <!-- Primary hero: Simplified View -->
+      <div class="simplify-ui-hero">
+        <div class="simplify-ui-hero-left">
+          <div class="simplify-ui-badge">PRIMARY</div>
+          <span class="simplify-ui-label">Simplified View</span>
+          <span class="simplify-ui-desc">Instantly cleans up page layout</span>
+        </div>
+        <div id="toggle-ui" class="toggle on"></div>
+      </div>
+
+      <!-- AI action cards -->
+      <div class="action-cards">
+        <button id="btn-simplify" class="action-card action-card-primary">
+          <span class="action-card-icon">✨</span>
+          <div class="action-card-text">
+            <span class="action-card-title">Simplify Text</span>
+            <span class="action-card-sub">AI rewrites in plain language</span>
+          </div>
+        </button>
+        <button id="btn-translate" class="action-card">
+          <span class="action-card-icon">🌍</span>
+          <div class="action-card-text">
+            <span class="action-card-title" id="translate-title">Translate</span>
+            <span class="action-card-sub" id="translate-sub">to Swahili</span>
+          </div>
+        </button>
+        <button id="btn-describe" class="action-card">
+          <span class="action-card-icon">🖼️</span>
+          <div class="action-card-text">
+            <span class="action-card-title">Describe Images</span>
+            <span class="action-card-sub">Labels every image on page</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Visual toggles -->
+      <div class="toggles-section">
+        <div class="toggles-label">Display Settings</div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <span class="toggle-name">High Contrast</span>
+            <span class="toggle-desc">Bold colours for easier reading</span>
+          </div>
+          <div id="toggle-contrast" class="toggle on"></div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <span class="toggle-name">Large Font</span>
+            <span class="toggle-desc">Increases text size on page</span>
+          </div>
+          <div id="toggle-font" class="toggle"></div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <span class="toggle-name">Dyslexia Font</span>
+            <span class="toggle-desc">Easier letter spacing</span>
+          </div>
+          <div id="toggle-dyslexia" class="toggle"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup-footer">
+      <span id="status-text" class="status-text"></span>
+    </div>
+  </div>
+
+  <!-- ══ LOADING ══ -->
+  <div id="screen-loading" class="screen">
+    <div class="loading-screen">
+      <div class="loading-logo">KIONGOZI AI</div>
+      <div class="spinner"></div>
+      <div class="loading-text">
+        <h3 id="loading-msg">Simplifying your page…</h3>
+        <p>This may take a few seconds</p>
+      </div>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ══ RESULT ══ -->
+  <div id="screen-result" class="screen">
+    <div class="result-header">
+      <button id="btn-back" class="result-back">← Back</button>
+      <div class="result-header-badge">
+        <div class="check-icon">✓</div>
+        <span id="result-label">Done</span>
+      </div>
+    </div>
+
+    <div class="result-body">
+      <!-- Tag + actions row -->
+      <div class="result-meta">
+        <div id="result-tag" class="result-tag">✨ Simplified</div>
+        <div class="result-actions-top">
+          <button id="btn-copy" class="icon-btn" title="Copy to clipboard">📋</button>
+          <button id="btn-speak" class="icon-btn" title="Read aloud">🔊</button>
+        </div>
+      </div>
+
+      <!-- Main content card -->
+      <div id="result-content" class="result-content-card"></div>
+
+      <!-- Key points -->
+      <div id="result-keypoints" class="keypoints-card" style="display:none;">
+        <div class="keypoints-title">Key Points</div>
+        <div id="keypoints-list"></div>
+      </div>
+
+      <!-- Full-width page actions -->
+      <div class="result-page-actions">
+        <button id="btn-inject" class="page-action-btn page-action-primary">
+          <span>📄</span> Show on Entire Page
+        </button>
+        <button id="btn-view-original" class="page-action-btn page-action-outline">
+          <span>↩</span> View Original
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SETTINGS ══ -->
+  <div id="screen-settings" class="screen">
+    <div class="settings-header">
+      <span id="btn-close-settings" class="back-btn">←</span>
+      <h2>Settings</h2>
+    </div>
+    <div class="settings-body">
+
+      <div class="settings-group">
+        <div class="settings-group-label">Translation Language</div>
+        <div class="lang-selector">
+          <div class="lang-btn active" data-lang="English">🇬🇧 English</div>
+          <div class="lang-btn" data-lang="Swahili">🇰🇪 Swahili</div>
+          <div class="lang-btn" data-lang="Kikuyu">🇰🇪 Kikuyu</div>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-label">Reading Level</div>
+        <div class="slider-labels"><span>Simple</span><span>Detailed</span></div>
+        <input id="slider-reading" type="range" min="1" max="3" value="1" class="mw-slider">
+        <span id="reading-level-label" class="reading-label">Simple (Grade 3)</span>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-label">Display</div>
+        <div class="slider-labels"><span>Font: Small</span><span>Large</span></div>
+        <input id="slider-font" type="range" min="1" max="3" value="2" class="mw-slider">
+        <div class="toggle-row" style="margin-top:8px;">
+          <div class="toggle-info">
+            <span class="toggle-name">High Contrast Mode</span>
+          </div>
+          <div id="settings-toggle-contrast" class="toggle on"></div>
+        </div>
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <span class="toggle-name">Dyslexia-Friendly Font</span>
+          </div>
+          <div id="settings-toggle-dyslexia" class="toggle"></div>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-label">Backend URL</div>
+        <input id="input-backend" type="text" class="text-input" value="http://127.0.0.1:5001">
+        <p class="input-hint">Change this if your Flask server runs on a different port.</p>
+      </div>
+
+      <button id="btn-clear-cache" class="btn-outline" style="width:100%;padding:12px;margin-bottom:8px;">🗑️ Clear Saved Results</button>
+      <button id="btn-save-settings" class="save-btn">Save Settings</button>
+      <button id="btn-replay-onboarding" class="btn-outline-sm-full">↩ Replay Welcome Guide</button>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
