@@ -23,13 +23,13 @@ READING_LEVELS = {
 }
 
 
-# ── Health check ──────────────────────────────────────────────────────────────
+# Health check 
 @app.route("/", methods=["GET"])
 def health():
     return jsonify({"status": "Kiongozi AI backend is running ✓", "version": "2.0"})
 
 
-# ── Simplify ──────────────────────────────────────────────────────────────────
+# Simplify 
 @app.route("/simplify", methods=["POST"])
 def simplify():
     data = request.get_json()
@@ -67,7 +67,7 @@ Text to simplify:
         return jsonify({"result": response.text.strip(), "key_points": []})
 
 
-# ── Translate ─────────────────────────────────────────────────────────────────
+#  Translate 
 @app.route("/translate", methods=["POST"])
 def translate():
     data = request.get_json()
@@ -88,7 +88,7 @@ Text:
     return jsonify({"result": response.text.strip()})
 
 
-# ── Caption (image description) ───────────────────────────────────────────────
+# Caption (image description) 
 @app.route("/caption", methods=["POST"])
 def caption():
     data = request.get_json()
@@ -124,7 +124,7 @@ def caption():
         return jsonify({"error": str(e)}), 500
 
 
-# ── Summarise (bonus: quick TL;DR for very long pages) ────────────────────────
+#  Summarise (bonus: quick TL;DR for very long pages) 
 @app.route("/summarise", methods=["POST"])
 def summarise():
     data = request.get_json()
